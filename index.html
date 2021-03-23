@@ -5,8 +5,12 @@
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   </head>
   <body>
-      <h1>Hello from Sayak</h1>
-      <p>This is a single DoF system calculator</p>
+      <h1>Single DoF system calculator</h1>
+      <p>
+        Made by <b>Sayak Nandi</b><br>
+        Roll number: <b>181ME174</b><br>
+        Class: <b>M1</b><br>
+      </p>
       <script type="text/javascript" src="function.js"></script>
       <style type="text/css">
       .tg  {border-collapse:collapse;border-spacing:0;}
@@ -19,66 +23,80 @@
       <table style="display: inline-block;" class="tg" >
       <thead>
         <tr>
-          <th class="tg-0lax" style="height:100px;width:100px">Input Parameters</th>
+          <th class="tg-0lax" style="height:100px;width:100px">Input Parameters(Notation) [Unit]</th>
           <th class="tg-0lax" style="height:100px;width:100px">Values</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td style="height:100px;width:100px">Mass(m)</td>
+          <td style="height:100px;width:100px">Mass(m) [kg]</td>
             <td style="height:100px;width:100px"><input type="number" placeholder="default = 1.00" step = "0.0001" id="mass" name="mass"></td>
         </tr>
         <tr>
-          <td style="height:100px;width:100px">Stiffness constant(k)</td>
+          <td style="height:100px;width:100px">Stiffness constant(k) [N/m]</td>
             <td style="height:100px;width:100px"><input type="number" placeholder="default = 1.00" step = "0.0001" id="stiff" name="stiffness constant"></td>
         </tr>
         <tr>
-          <td style="height:100px;width:100px">Damping constant(c)</td>
+          <td style="height:100px;width:100px">Damping constant(c) [Ns/m]</td>
             <td style="height:100px;width:100px"><input type="number" placeholder="default = 1.00" step = "0.0001" id="damping" name="damping constant"></td>
         </tr>
         <tr>
-          <td style="height:100px;width:100px">Initial conditions (x(0))</td>
+          <td style="height:100px;width:100px">Initial Displacement(x(0)) [m]</td>
             <td style="height:100px;width:100px"><input type="number" placeholder="default = 0.00" step = "0.0001" id="x10" name="initial x"></td>
         </tr>
         <tr>
-          <td style="height:100px;width:100px">Initial conditions (xdot(0))</td>
+          <td style="height:100px;width:100px">Initial Velocity(xdot(0)) [m/s]</td>
             <td style="height:100px;width:100px"><input type="number" placeholder="default = 0.00" step = "0.0001" id="x20" name="initial xdot"></td>
+        </tr>
+        <tr>
+          <td style="height:200px;width:100px">Free or Forced vibration</td>
+          <td style="height:200px;width:100px"><input type="radio" name="choice" value="free"> Free Vibration<br>
+                                               <input type="radio" name="choice" value="forced"> Forced Vibration</td>
+        </tr>
+        <tr>
+          <td style="height:100px;width:100px">Forced wave frequency</td>
+            <td style="height:100px;width:100px"><input type="number" placeholder="default = 0.00" step = "0.0001" id="ff" name="Forced wave frequnecy"></td>
         </tr>
       </tbody>
       </table>
       <table style="display: inline-block;" align ="center" class="tg" >
       <thead>
         <tr>
-          <th class="tg-0lax" style="height:100px;width:100px">Input Parameters</th>
+          <th class="tg-0lax" style="height:100px;width:100px">Output Parameters(Notation) [Unit]</th>
           <th class="tg-0lax" style="height:100px;width:100px">Values</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td style="height:100px;width:100px">Natural Angular frequnecy[wn] (rad/s)</td>
+          <td style="height:100px;width:100px">Natural Angular frequnecy(wn) [rad/s]</td>
           <td style="height:100px;width:100px"><p id="NAF"> -- </p></td>
         </tr>
         <tr>
-          <td style="height:100px;width:100px">Damped Angular Frequency[wd] (rad/s)</td>
+          <td style="height:100px;width:100px">Damped Angular Frequency(wd) [rad/s]</td>
             <td style="height:100px;width:100px"><p id="DAF"> -- </p></td>
         </tr>
         <tr>
-          <td style="height:100px;width:100px">Critical damping[cc] (Ns/m)</td>
+          <td style="height:100px;width:100px">Critical damping(cc) [Ns/m]</td>
             <td style="height:100px;width:100px"><p id="CC"> -- </p></td>
         </tr>
         <tr>
 
-            <td style="height:100px;width:100px">Damping ratio[]</td>
+            <td style="height:100px;width:100px">Damping ratio()</td>
               <td style="height:100px;width:100px"><p id="DR"> -- </p></td>
         </tr>
         <tr>
-          <td style="height:100px;width:100px">Initial conditions (xdot(0))</td>
-            <td style="height:100px;width:100px"><p id=""> -- </p></td>
+          <td style="height:100px;width:100px">Quality Factor(Q)</td>
+            <td style="height:100px;width:100px"><p id="Q"> -- </p></td>
+        </tr>
+        <tr>
+          <td style="height:100px;width:100px">Transmissibility(Tr)</td>
+            <td style="height:100px;width:100px"><p id="TR"> -- </p></td>
         </tr>
       </tbody>
       </table>
       <button type="button" onclick="compute()">Compute answer</button>
 
-      <div id="plot" style="width:1000px;height:850px;"></div>
+      <div id="dvx" style="width:1000px;height:850px;"></div>
+      <div id="trvsfreqr" style="width:1000px;height:850px;"></div>
   </body>
 </html>
