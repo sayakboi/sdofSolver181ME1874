@@ -47,7 +47,7 @@ function assign()
     ff = 0;
   }
   else if (val == "" ) {
-    alert('Please select choice answer');
+    alert('Please select choice between forced or free');
   }
   for (i = 0; i<n; i++)
   {
