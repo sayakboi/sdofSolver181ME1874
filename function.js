@@ -57,7 +57,7 @@ function assign()
     fw[i] = 5*Math.sin(ff*i*dt);
   }
 
-  x1[0] = +document.getElementById('x10').value || 1.00;
+  x1[0] = +document.getElementById('x10').value || 0.00;
   x2[0] = +document.getElementById('x20').value || 0.00;
 }
 function compute()
