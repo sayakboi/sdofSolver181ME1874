@@ -26,9 +26,9 @@ var freqr = new Array(n*10);
 
 function assign()
 {
-  m = +document.getElementById('mass').value;
-  k = +document.getElementById('stiff').value;
-  c = +document.getElementById('damping').value;
+  m = +document.getElementById('mass').value || 1.00;
+  k = +document.getElementById('stiff').value || 1.00;
+  c = +document.getElementById('damping').value || 1.00;
   var radios = document.getElementsByName('choice');
 
   for (var i = 0, length = radios.length; i < length; i++)
@@ -40,7 +40,7 @@ function assign()
     }
   if(val == 'forced')
   {
-    ff = +document.getElementById('ff').value;
+    ff = +document.getElementById('ff').value || 0.00;
   }
   else if(val == 'free')
   {
@@ -57,8 +57,8 @@ function assign()
     fw[i] = 5*Math.sin(ff*i*dt);
   }
 
-  x1[0] = +document.getElementById('x10').value;
-  x2[0] = +document.getElementById('x20').value;
+  x1[0] = +document.getElementById('x10').value || 1.00;
+  x2[0] = +document.getElementById('x20').value || 0.00;
 }
 function compute()
 {
